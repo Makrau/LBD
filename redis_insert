@@ -1,0 +1,19 @@
+SELECT 2
+
+HMSET AT/31 tipo "salade aula normal" capacidade 60 apelido "nenhum"
+HMSET EX/01 tipo "sala de estudo" capacidade 100 apelido "biblioteca"
+HMSET LAB/01 tipo "laboratorio de quimica" capacidade 20 apelido "nenhum"
+
+HMSET pessoa:1 nome "Marcos" cpf "03322012245" identidade "3221765" filiacao "Maria" sexo "Masculino" estado_civil "Solteiro" naturalidade "Brasileiro" endereco "endereco:1" telefone "telefone:1" email "marcos@email.com" escolaridade "superior" cargo "professor"
+
+HMSET evento1 tipo "repetitivo" nome "EDA" sala "AT/31" horario "10-12" dias "Segunda/Quarta"
+HMSET evento2 tipo "repetitivo" nome "LBD" sala "EX/01" horario "8-10" dias "Terca/Quinta"
+HMSET evento3 tipo "repetitivo" nome "OO" sala "EX/01" horario "10-12" dias "Terca/Quinta"
+
+LPUSH lista_salas "AT/31" 
+LPUSH lista_salas "EX/01"
+LPUSH lista_salas "LAB/01"
+
+LPUSH lista_eventos "evento1"
+LPUSH lista_eventos "evento2"
+LPUSH lista_eventos "evento3"
